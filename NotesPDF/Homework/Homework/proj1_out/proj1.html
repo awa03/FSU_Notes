@@ -1,0 +1,162 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="gnu emacs">
+<TITLE>Project 1: A Text Analyzer</TITLE>
+<style type = "text/css">
+
+  tt {font-family:Courier New, Fixedsys; font size = 11pt}
+  p  {font-family:Ariel, sans-serif; font size = 10pt}
+  h1 {font-family:Ariel, sans-serif; font size = 12pt; font-weight = bold}
+  h2 {font-family:Ariel, sans-serif; font size = 10pt; font-weight = bold}
+  ul {font-family:Ariel, sans-serif; font size = 10pt}
+  li {font-family:Ariel, sans-serif; font size = 10pt}
+
+</style>
+</HEAD>
+<BODY>
+
+<center>
+<h1>Project 1: Enhanced wc program</h1>
+</center>
+
+<center><h2>Due: September 22, 11:59pm</h2></center>
+
+<P>
+  <b>Educational Objectives:</b>
+Apply C++ knowledge for problem solving; 
+experience text processing techniques; 
+experience using the makefile to organize and compile applications.
+</P>
+
+<p>
+  <strong>Statement of Work:</strong> Develop an enhanced <em>wc</em>
+  program that collects the usage statistics of characters and words
+  in a file (redirected as the standard input). 
+<p>
+</p>
+
+<p>
+<b>Project Requirement: </b>
+</p>
+<p>
+The <em>wc</em> program is a UNIX utility that counts the numbers of lines,
+words, and characters in a text file. Try "wc < filename" in a UNIX system
+to see how wc behaves. In this assignment, you will develop an enhanced wc 
+program that no only counts the numbers of lines, words, and characters, 
+but also collects (and outputs) the usage statistics of characters,
+words, and numbers in the file. 
+
+<p>
+
+The program should read the input until it reaches the end, keeping track of 
+the numbers of lines, words, and characters while counting 
+the number of times each character/word is used. 
+A word can either be an identifier or a number. An identifier is defined as a
+  letter followed by a sequence of letters or digits('a'..'z', 'A'..'Z',
+  or '0'..'9'). Identifiers are case insensitive ("AA00", "Aa00", "aA00",
+  and "aa00" are considered the same). A number is defined as a sequence of digits
+  ('0'..'9') that are not in an identifier. Different sequences
+  represent different numbers. For example, number "001" is different
+  from number "1". Identifiers are separated by non-letter and non-digit
+  characters. Numbers are separated by words or other non-letter and
+  non-digit characters. 
+<p>
+  Your program should record the number of times each 
+  identifier/number/character happens. It should first output the number 
+of lines, words, and characters in the file. After that, it should output 
+up to five most used characters,  up to five most used identifiers, and 
+up to five most used numbers as well as the number of times these 
+characters/identifiers/numbers are used.
+Since identifiers are case insensitive, the program only outputs identifiers 
+with lower case letters.
+The characters, numbers and identifiers should be outputted in the descending 
+order based on the number of times they are used. When two characters 
+happen the same number of times, 
+the character with a smaller ASCII value should be considered as being 
+used more frequently. When two identifiers (or numbers) happen the same number 
+of times, the identifier (number) that occurs earlier in the input should be 
+considered as being used more frequently. 
+An example executable (for the <tt>linprog</tt> machines) 'proj1.x' is 
+provided in the supplied program files. You should make the outputs of your 
+program the same as those of 'proj1.x'. When printing characters,
+use '\t' for tab and '\n' for newline. All other letters should be 
+outputted normally as they are.
+<p>
+
+<p><b>Deliverables:</b> Turn in files <tt>proj1.cpp</tt>
+and <tt>makefile</tt> in a single tar file online via Canvas. When the two files
+(<tt>proj1.cpp</tt> and <tt>makefile</tt>) are placed in the same directory on linprog, 
+type 'make' should produce the executable 'proj1.x'.
+<p>
+<b> Grading:</b>
+<ul> 
+<li> Type 'make' in the subdirectory containing your submitted files 
+should produce the executable <tt>proj1.x</tt>. If the program or makefile has any 
+kind of (compiling) errors, no more than 10 points will be awarded. 
+A program written in a language other than C++ will receive 0 point.</li>
+<li><tt>proj1.x</tt> is successfully produced (15 points).</li>
+<li><tt>proj1.x</tt> outputs line, word, and character counts correctly for 
+simple small files (up to 2 lines, 10 words, 50 characters) (30 points).</li>
+<li><tt>proj1.x</tt> outputs character usage correctly for 
+simple small files (10 points).</li>
+<li><tt>proj1.x</tt> outputs identifier usage correctly for 
+simple small files (10 points).</li>
+<li><tt>proj1.x</tt> outputs number usage correctly for 
+simple small files (10 points).</li>
+<li><tt>proj1.x</tt> outputs line, word, and character counts correctly for 
+any file. The program earns these points only after it passes all testings                 with small files. (10 points). </li>
+<li><tt>proj1.x</tt> outputs character usage correctly for any file.
+The program earns these points only after it passes all testings                  
+with small files.
+ (5 points).</li>
+<li><tt>proj1.x</tt> outputs identifier usage correctly for 
+any file. 
+The program earns these points only after it passes all testings                  
+with small files. (5 points).</li>
+<li><tt>proj1.x</tt> outputs number usage correctly for 
+any file. The program earns these points only after it passes 
+all testings with small files. (5 points).</li>
+</ul>
+
+<p>
+<b>Extra credits:</b>
+</p>
+<ul>
+<li>The first student who reports a new bug in the provided 'proj1.x' will
+get an extra of 5 points for the assignment.
+</li>
+</ul>
+
+<p>
+<b>Hints:</b>
+</p>
+
+<UL>
+<li> You can assume that the total number of different words used in a file is 
+less than 25000 and the number of characters in a word is less than 200.</li>
+
+<li> Due to our own definition of word, our program's word count may be 
+different from the word count from wc (line count and character count 
+should be the same). </li>
+
+<li>You can start by counting the usage of characters, and outputting the most
+used characters. The same logic can be applied to count and output 
+the usage of identifiers and numbers.
+</li>
+
+<li>You should make sure that your program produces exactly the same output 
+as the provided <tt>proj1.x</tt> for all testing files provided. It would be a good idea
+to create a few testing files of your own. In grading, more testing cases will be 
+used.</li>
+</UL>
+<p>
+<b>Miscellaneous:</b>
+</p>
+<ul>
+<li>All programs handed in will be checked by automatic plagiarism 
+detection software.
+</li>
+</ul>
+
+</body>
