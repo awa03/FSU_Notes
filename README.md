@@ -1,6 +1,6 @@
 # FSU NOTES ![FSU Icon]( =100x100)
 
-<img src="[https://camo.githubusercontent.com/...](https://upload.wikimedia.org/wikipedia/commons/6/6c/Florida_State_University_interlocking_FS_logo.svg)" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="200" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Florida_State_University_interlocking_FS_logo.svg" width="200" height="200" />
 This repository is a compilation of my notes from Florida State University. Within this compilation I explore every aspect of computer science. Sections currently under work will be updated promptly. These Notes are not meant to provide benifit to any party, rather to be used as a resource for personal use. Per FSU Guidelines these notes should not be bought nor sold. If any proffessor feels that this is a violation of their course policies please contact awa22@fsu.edu
 
 
