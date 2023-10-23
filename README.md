@@ -1,4 +1,4 @@
-# FSU NOTES <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Florida_State_University_interlocking_FS_logo.svg" width="50" height="50" />
+# FSU NOTES <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Florida_State_University_interlocking_FS_logo.svg" width="25" height="25" />
 
 
 This repository is a compilation of my notes from Florida State University. Within this compilation I explore every aspect of computer science. Sections currently under work will be updated promptly. These Notes are not meant to provide benifit to any party, rather to be used as a resource for personal use. Per FSU Guidelines these notes should not be bought nor sold. If any proffessor feels that this is a violation of their course policies please contact awa22@fsu.edu
