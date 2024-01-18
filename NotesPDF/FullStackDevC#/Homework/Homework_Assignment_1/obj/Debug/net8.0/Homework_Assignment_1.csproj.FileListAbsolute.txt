@@ -1,0 +1,15 @@
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/bin/Debug/net8.0/Homework_Assignment_1
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/bin/Debug/net8.0/Homework_Assignment_1.deps.json
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/bin/Debug/net8.0/Homework_Assignment_1.runtimeconfig.json
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/bin/Debug/net8.0/Homework_Assignment_1.dll
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/bin/Debug/net8.0/Homework_Assignment_1.pdb
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.AssemblyInfoInputs.cache
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.AssemblyInfo.cs
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.csproj.CoreCompileInputs.cache
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.sourcelink.json
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.dll
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/refint/Homework_Assignment_1.dll
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.pdb
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/Homework_Assignment_1.genruntimeconfig.cache
+/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/FullStackDevC#/Homework/Homework_Assignment_1/obj/Debug/net8.0/ref/Homework_Assignment_1.dll

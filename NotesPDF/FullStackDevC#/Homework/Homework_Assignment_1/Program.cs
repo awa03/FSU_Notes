@@ -1,0 +1,93 @@
+﻿using System;
+
+namespace Program{
+    internal class Program{
+        static string? Menu(){
+            Console.WriteLine("Welcome To Canvas");
+            Console.WriteLine("A - Create A Course");
+            Console.WriteLine("B - Create A Student");
+            Console.WriteLine("C - Add Student To Course");
+            Console.WriteLine("D - Remove Student From Course");
+            Console.WriteLine("E - List All Courses");
+            Console.WriteLine("F - Search For Course By Name or Desc");
+            Console.WriteLine("G - List All Students");
+            Console.WriteLine("H - Search For A Student By Name");
+            Console.WriteLine("I - List All Courses A Student Is Taking");
+            Console.WriteLine("J - Update Courses Information");
+            Console.WriteLine("K - Update Students Information");
+            Console.WriteLine("L - Create An Assignment");
+            Console.WriteLine("M - Course List?"); // come back for clarification
+
+            return (Console.ReadLine()).ToUpper();
+        }
+        static void Main(string[] args){
+           // Temporary I/O for the project, switch + while loop
+           
+            string UserInput;
+            bool ProgramRunning = true;
+            Canvas canvas = new Canvas();
+            while(ProgramRunning){
+                switch (UserInput = Menu())
+                {
+                    case "A":
+                    // Get User Input on Course Details
+                        Console.WriteLine("Enter Course Name");
+                        string? CourseName = Console.ReadLine();
+                        Console.WriteLine("Enter Course Code");
+                        string? CourseCode = Console.ReadLine();
+                        Console.WriteLine("Enter Course Description");
+                        string? CourseDescription = Console.ReadLine();
+                        canvas.AddCourse(CourseName, CourseCode, CourseDescription);
+                        break;
+
+                    case "B":
+                        Console.WriteLine("Enter The Student Name");
+                        string? StudentName = Console.ReadLine();
+                        Console.WriteLine("Enter Freshman, Softmore, Junior, Senior");
+                        string? StudentGrade = Console.ReadLine();
+                        Person.Classification grade = new Person.Classification(){};
+
+                        // get the students grade
+                        if(StudentGrade == "Senior"){grade = Person.Classification.Senior;}
+                        else if(StudentGrade == "Junior"){grade = Person.Classification.Junior;}
+                        else if(StudentGrade == "Softmore"){grade = Person.Classification.Softmore;}
+                        else{grade = Person.Classification.Freshman;}
+
+                        canvas.CreateStudent(StudentName ,grade);
+                        break;
+
+                    case "C":
+                        break;
+
+                    case "D":
+                        break;
+
+                    case "E":
+                        break;
+
+                    case "F":
+                        break;
+                    case "G":
+                        break;
+                    case "H":
+                        break;
+                    case "I":
+                        break;
+                    case "J":
+                        break;
+                    case "K":
+                        break;
+                    case "L":
+                        break;
+                    case "M":
+                        break;
+        
+                    default:
+                        ProgramRunning =false;
+                        break;
+                }   
+
+            }
+        }
+    }
+}
