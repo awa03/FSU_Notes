@@ -57,21 +57,38 @@ namespace Program{
                         break;
 
                     case "C":
+                        Console.WriteLine("Enter Course Code");
+                        canvas.Add_Student_To_Course(Console.ReadLine()); // reads in student name in the call
                         break;
 
                     case "D":
+                        Console.WriteLine("Enter Course Code");
+                        canvas.Remove_Student_From_Course(Console.ReadLine()); 
                         break;
 
                     case "E":
+                        canvas.List_All_Courses();
                         break;
 
                     case "F":
+                        Console.WriteLine("Would You Like To Search By Name or Desc");
+                        if(Console.ReadLine() == "Name"){
+                            Console.WriteLine("Enter Name");
+                            canvas.Search_For_Course(Console.ReadLine());
+                        }
+                        else {
+                            Console.WriteLine("Enter Desc");
+                            canvas.Search_For_Course_By_Desc(Console.ReadLine());
+                        }
                         break;
                     case "G":
+                        canvas.List_All_Students();
                         break;
                     case "H":
+                        canvas.GetStudent();
                         break;
                     case "I":
+                        canvas.List_Student_Courses();
                         break;
                     case "J":
                         break;

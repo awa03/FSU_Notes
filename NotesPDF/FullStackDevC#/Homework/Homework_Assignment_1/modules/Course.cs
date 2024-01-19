@@ -1,6 +1,8 @@
 class Course {
     public Course(){
-        Assignments = new List<>(){};
+        Assignments = new List<Assignment>(){};
+        CourseRoster = new List<Person>(){};
+        Modules = new List<Module>(){};
     }
 
     // Course Code For Identifying Indivdual Course
@@ -39,5 +41,8 @@ class Course {
             }
         }
         return false;
+    }
+    public string? CourseToString(){
+        return $"{CourseCode}, {CourseName}\n {CourseDescription}";
     }
 }
