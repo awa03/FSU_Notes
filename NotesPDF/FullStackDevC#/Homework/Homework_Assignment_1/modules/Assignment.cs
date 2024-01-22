@@ -46,4 +46,11 @@ class Assignment{
         get;
         set;
     }
+
+    public Date? AssignmentDueDate{
+         get;
+         set;
+    }
+
+    
 }

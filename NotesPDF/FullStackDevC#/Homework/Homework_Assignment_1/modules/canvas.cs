@@ -97,10 +97,22 @@ class Canvas
         }
     }
 
+    public Person Get_Student_By_Name(string? StudentName){
+        foreach(var student in StudentList){
+            if(student.PersonName == StudentName){
+                Console.WriteLine("Student Found");
+                Console.WriteLine($"Student Info : {student.Student_To_String()}");
+                return student;
+            }
+        }
+        Console.WriteLine("No Student Found By That Name");
+        return new Person(){}; // return null on no student found 
+    }
+
 
     public Person GetStudent()
     {
-        Console.WriteLine("Enter The Student Name");
+        Console.WriteLine("Enter The Student Number: ");
 
         int i = 0;
         foreach (var student in StudentList)
@@ -148,6 +160,88 @@ class Canvas
         Person Student = GetStudent();
         Student.ModifyStudent();
     }
+
+    public bool Create_Assignment(string? courseCode){
+        foreach(var course in CourseList){
+            if(course.CourseCode == courseCode){
+                var PromptResponse = AssignmentPrompt();
+                course.CreateAssignment(PromptResponse.Item1, PromptResponse.Item2, PromptResponse.Item3, PromptResponse.Item4);
+                return true;
+            }
+        }
+        
+        return false; // Base Case
+    }
+
+    public void View_Course_Info(){
+        Course SelectedCourse = SelectCourse();
+        Console.WriteLine(SelectedCourse.CourseToString());
+        SelectedCourse.ViewStudents();
+    }
+
+    private Course SelectCourse(){
+        Console.WriteLine("Enter Course Number in the List: ");
+
+        int i = 0;
+        foreach (var course in CourseList)
+        {
+            Console.WriteLine($"{i + 1}: {course.CourseName}, {course.CourseCode}");
+            i++;
+        }
+
+        
+        // Ensure Return Is Not Out Of Bounds
+        int UserInput = Convert.ToInt32(Console.ReadLine());
+        if (UserInput < i+1)
+        {
+            return CourseList[UserInput - 1];
+        }
+        // Default Return 
+        else
+        {
+            Console.WriteLine("Invalid Input Returning Default Student");
+            return new Course(){}; // Default Return - Base Case
+        }
+    }
+
+    private (string?, string?, int, Date?) AssignmentPrompt(){
+        Console.WriteLine("Enter The Name Of The Assignment");
+        string Name = Console.ReadLine();
+        
+        Console.WriteLine("Enter The Description Of The Assignment");
+        string Desc = Console.ReadLine();
+
+        Console.WriteLine("Enter The Possible Points");
+        int availablePoints = int.Parse(Console.ReadLine());
+
+        Date userDate = new Date();
+
+        // Prompt the user for input
+        Console.Write("Enter hour: ");
+        userDate.hour = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter minute (press Enter for none): ");
+        string minuteInput = Console.ReadLine();
+        userDate.minute = Convert.ToInt32(minuteInput);
+
+        Console.Write("Enter day (press Enter for none): ");
+        string dayInput = Console.ReadLine();
+        userDate.day = Convert.ToInt32(dayInput);
+
+        Console.Write("Enter month (press Enter for none): ");
+        string monthInput = Console.ReadLine();
+        userDate.month = Convert.ToInt32(monthInput);
+
+        Console.Write("Enter year (press Enter for none): ");
+        string yearInput = Console.ReadLine();
+        userDate.year = Convert.ToInt32(yearInput);
+
+        return (Name, Desc, availablePoints, userDate);
+    }
+
+
+
+    
 
     
 

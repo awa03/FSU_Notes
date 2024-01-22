@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 class Course {
     public Course(){
         Assignments = new List<Assignment>(){};
@@ -57,5 +58,26 @@ class Course {
 
     public string? CourseToString(){
         return $"{CourseCode}, {CourseName}\n {CourseDescription}";
+    }
+
+    public Assignment CreateAssignment(string assignmentName, string assignmentDesc, int availablePoints, Date dueDate){
+        // Create New Assignment with variables added
+        Assignment newAssignment = new Assignment(){
+            AssignmentName = assignmentName, 
+            AssignmentDesc = assignmentDesc, 
+            AvailablePoints = availablePoints, 
+            AssignmentDueDate = dueDate
+        };
+        
+        Assignments.Add(newAssignment);
+        return newAssignment;
+    }
+
+    public void ViewStudents(){
+        int i =1;
+        foreach(var student in CourseRoster){
+            Console.WriteLine($" {i} : {student.Student_To_String()}");
+            i++;
+        }
     }
 }

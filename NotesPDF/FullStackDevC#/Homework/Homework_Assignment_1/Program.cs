@@ -16,11 +16,12 @@ namespace Program{
             Console.WriteLine("J - Update Courses Information");
             Console.WriteLine("K - Update Students Information");
             Console.WriteLine("L - Create An Assignment");
-            Console.WriteLine("M - Course List?"); // come back for clarification
+            Console.WriteLine("M - Course Information"); // come back for clarification
             Console.WriteLine("N - Clear Console");
 
             return (Console.ReadLine()).ToUpper();
         }
+        
         static void Main(string[] args){
            // Temporary I/O for the project, switch + while loop
            
@@ -87,6 +88,7 @@ namespace Program{
                         break;
                     case "H":
                         Console.WriteLine("Enter Student Name");
+                        canvas.Get_Student_By_Name(Console.ReadLine());
                         // need clarification on function
                         break;
                     case "I":
@@ -100,9 +102,13 @@ namespace Program{
                         canvas.Update_Student_Info();
                         break;
                     case "L":
-                        
+                        Console.WriteLine("Enter Course Code");
+                        if(!canvas.Create_Assignment(Console.ReadLine())){
+                            Console.WriteLine("Invalid Course Code");
+                        } 
                         break;
                     case "M":
+                        canvas.View_Course_Info(); 
                         break;
                     case "N":
                         Console.Clear();
