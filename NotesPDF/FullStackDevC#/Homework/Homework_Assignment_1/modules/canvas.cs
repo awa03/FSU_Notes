@@ -109,24 +109,18 @@ class Canvas
             i++;
         }
 
+        
         // Ensure Return Is Not Out Of Bounds
-        if (Convert.ToInt32(Console.ReadLine()) < i)
+        int UserInput = Convert.ToInt32(Console.ReadLine());
+        if (UserInput < i+1)
         {
-            return StudentList[i - 1];
+            return StudentList[UserInput - 1];
         }
         // Default Return 
         else
         {
+            Console.WriteLine("Invalid Input Returning Default Student");
             return new Person() { PersonName = "Default", GradeLevel = Person.Classification.Freshman };
-        }
-    }
-
-    public void List_Student_Courses(){
-        Person SearchStudent = GetStudent();
-        foreach(var student in StudentList){
-            if(student == SearchStudent){
-                Console.WriteLine(student.Student_To_String());
-            }
         }
     }
 
@@ -138,5 +132,23 @@ class Canvas
             }
         }
     }
+
+    public bool UpdateCourseInfo(string? CourseCode){
+        foreach(var course in CourseList){
+            if(course.CourseCode == CourseCode){
+                course.ChangeInfo();
+                return true;
+            }
+        }
+        Console.WriteLine("Course Not Found");
+        return false;
+    }
+
+    public void Update_Student_Info(){
+        Person Student = GetStudent();
+        Student.ModifyStudent();
+    }
+
+    
 
 }

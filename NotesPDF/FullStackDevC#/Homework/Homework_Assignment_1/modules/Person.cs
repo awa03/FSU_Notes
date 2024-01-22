@@ -20,7 +20,7 @@ class Person{
 
     public bool AddCourse(Course AddCourse){
         foreach(var course in StudentsCourse){
-            if(course == AddCourse){
+            if(course.CourseCode == AddCourse.CourseCode){
                 return false;
             }
         }
@@ -29,8 +29,37 @@ class Person{
     }
 
     public void List_All_Courses(){
+        int i =1;
         foreach(var course in StudentsCourse){
-            Console.WriteLine(course.CourseToString());
+            Console.WriteLine($"{i}: {course.CourseToString()}");
+        }
+    }
+
+    public void ModifyStudent(){
+        Console.WriteLine("Would You Like To Modify The Name or Grade Level");
+        if(Console.ReadLine().ToUpper() == "NAME"){
+            Console.WriteLine("Enter The New Student Name");
+            PersonName = Console.ReadLine();
+        }
+        else{
+            Console.WriteLine("Enter Freshman, Softmore, Junior, or Senior");
+            switch(Console.ReadLine().ToUpper()){
+                case "SENIOR":
+                    GradeLevel = Classification.Senior;
+                    break;
+
+                case "JUNIOR":
+                    GradeLevel = Classification.Junior;
+                    break;
+
+                case "SOFTMORE":
+                    GradeLevel = Classification.Softmore;
+                    break;
+
+                default:
+                    GradeLevel = Classification.Freshman;
+                    break;
+            }
         }
     }
 
