@@ -17,6 +17,7 @@ namespace Program{
             Console.WriteLine("K - Update Students Information");
             Console.WriteLine("L - Create An Assignment");
             Console.WriteLine("M - Course List?"); // come back for clarification
+            Console.WriteLine("N - Clear Console");
 
             return (Console.ReadLine()).ToUpper();
         }
@@ -85,25 +86,32 @@ namespace Program{
                         canvas.List_All_Students();
                         break;
                     case "H":
-                        canvas.GetStudent();
+                        Console.WriteLine("Enter Student Name");
+                        // need clarification on function
                         break;
                     case "I":
-                        canvas.List_Student_Courses();
+                        canvas.List_All_Courses_Student_Taking();
                         break;
                     case "J":
+                        Console.WriteLine("Enter Course Code");
+                        canvas.UpdateCourseInfo(Console.ReadLine());
                         break;
                     case "K":
+                        canvas.Update_Student_Info();
                         break;
                     case "L":
+                        
                         break;
                     case "M":
                         break;
-        
+                    case "N":
+                        Console.Clear();
+                        break;
                     default:
                         ProgramRunning =false;
                         break;
                 }   
-
+                Console.WriteLine("\n\n");
             }
         }
     }

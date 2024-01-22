@@ -42,6 +42,19 @@ class Course {
         }
         return false;
     }
+    
+    public void ChangeInfo(){
+        Console.WriteLine("Would You Like To Change The Name Or Description");
+        if(Console.ReadLine().ToUpper() == "NAME"){
+            Console.WriteLine("Enter New Course Name");
+            CourseName = Console.ReadLine();
+        }
+        else{
+            Console.WriteLine("Enter New Course Description");
+            CourseDescription = Console.ReadLine();
+        }
+    }
+
     public string? CourseToString(){
         return $"{CourseCode}, {CourseName}\n {CourseDescription}";
     }
