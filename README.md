@@ -19,3 +19,4 @@ Sharanya Jayaraman | Computer Organization 1 | https://www.cs.fsu.edu/~jayarama/
 Kyle Muller | Intro To Web Design | https://www.linkedin.com/in/kyle-muller-56b0ba199/
 Raymond Lockwood | Intro To Unix | N/A
 Martin Bremer | Screening Science | https://www.linkedin.com/in/martin-bremer-phd-01bb6629/
+Nadja Elisabeth SEYED ASSIABAN | German 2 | N/A
