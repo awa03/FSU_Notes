@@ -4,12 +4,17 @@ class Course {
         Assignments = new List<Assignment>(){};
         CourseRoster = new List<Person>(){};
         Modules = new List<Module>(){};
+        CourseID = Guid.NewGuid();
     }
 
     // Course Code For Identifying Indivdual Course
     public string? CourseCode{ 
         get;
         set;
+    }
+    public Guid CourseID{
+        get;
+        private set;
     }
     // Name of the Course
     public string? CourseName{
@@ -24,7 +29,9 @@ class Course {
     // List of students in the course
     private List<Person> CourseRoster;
     // List of Assignments
-    private List<Assignment> Assignments;
+    public List<Assignment> Assignments{
+        get; set;
+    }
     // List of course modules
     private List<Module> Modules;
 

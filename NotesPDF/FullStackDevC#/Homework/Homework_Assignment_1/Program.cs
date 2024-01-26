@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 
 namespace Program{
     internal class Program{
@@ -18,6 +19,8 @@ namespace Program{
             Console.WriteLine("L - Create An Assignment");
             Console.WriteLine("M - Course Information"); // come back for clarification
             Console.WriteLine("N - Clear Console");
+            Console.WriteLine("O - Grade Student Assignment");
+            Console.WriteLine("P - View Assignments Grades");
 
             return (Console.ReadLine()).ToUpper();
         }
@@ -65,7 +68,7 @@ namespace Program{
 
                     case "D":
                         Console.WriteLine("Enter Course Code");
-                        canvas.Remove_Student_From_Course(Console.ReadLine()); 
+                        canvas.RemoveStudentFromCourse(Console.ReadLine()); 
                         break;
 
                     case "E":
@@ -113,6 +116,26 @@ namespace Program{
                     case "N":
                         Console.Clear();
                         break;
+
+                    case "O":
+                        Person student = canvas.GetStudent();
+                        Console.WriteLine("Enter Course Code");
+                        CourseCode = Console.ReadLine();
+                        Console.WriteLine("Enter Assignment Name");
+                        string? assignmentName = Console.ReadLine();
+                        Console.WriteLine("Enter Grade");
+                        double assignmentGradeDouble = Convert.ToDouble(Console.ReadLine());
+                        Grade assignGrade = new Grade(){GradePercentage = assignmentGradeDouble};
+                        canvas.Set_Assignment_Grade_For_Student(student, CourseCode,assignmentName, assignGrade);
+                        break;
+
+                    case "P":
+                        var studentToView = canvas.GetStudent();
+                        canvas.View_Student_Grades(studentToView);
+                        break;
+
+                    
+
                     default:
                         ProgramRunning =false;
                         break;

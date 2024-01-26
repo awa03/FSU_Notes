@@ -34,9 +34,17 @@ class Date{
 }
 
 class Assignment{
+
+    public Assignment(){
+        AssignmentID = Guid.NewGuid();
+    }
     public string? AssignmentName{
         get; 
         set;
+    }
+    public Guid AssignmentID{
+        get;
+        private set;
     }
     public string? AssignmentDesc{
         get; 
@@ -52,5 +60,12 @@ class Assignment{
          set;
     }
 
-    
+    public Grade AssignementGrade{
+        get;
+        set;
+    }
+
+    public string? Assignment_To_String(){
+        return $"{AssignmentName}, {AssignmentDesc}, {AssignmentDueDate.DateToString()}\n {AvailablePoints}";
+    }
 }

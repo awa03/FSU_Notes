@@ -1,4 +1,10 @@
+
+
 class Person{
+
+
+
+
     public Person(){
         StudentsCourse = new List<Course>(){};
     }
@@ -12,15 +18,17 @@ class Person{
         set;
     }
 
+    public List<Course> StudentsCourse;
+    private List<Grade> StudentGrades;
+
+
     public string? Student_To_String(){
         return $"{PersonName}, {GradeLevel.ToString()}";
     }
 
-    public List<Course> StudentsCourse;
-
     public bool AddCourse(Course AddCourse){
         foreach(var course in StudentsCourse){
-            if(course.CourseCode == AddCourse.CourseCode){
+            if(course.CourseID == AddCourse.CourseID){
                 return false;
             }
         }
@@ -59,6 +67,14 @@ class Person{
                 default:
                     GradeLevel = Classification.Freshman;
                     break;
+            }
+        }
+    }
+
+    public void View_Student_Grades(){
+        foreach(var course in StudentsCourse){
+            foreach(var assignment in course.Assignments){
+                Console.WriteLine(assignment.Assignment_To_String());
             }
         }
     }

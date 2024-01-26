@@ -43,6 +43,7 @@ class Canvas
 
     public void Add_Student_To_Course(string? CourseCode)
     {
+        
         foreach (var course in CourseList)
         {
             if (course.CourseCode == CourseCode)
@@ -54,16 +55,10 @@ class Canvas
         }
     }
 
-    public bool Remove_Student_From_Course(string? courseCode)
+    public bool RemoveStudentFromCourse(string? courseCode)
     {
-        foreach (var course in CourseList)
-        {
-            if (course.CourseCode == courseCode)
-            {
-                return course.RemoveStudent(GetStudent());
-            }
-        }
-        return false;
+        var course = CourseList.FirstOrDefault(c => c.CourseCode == courseCode);
+        return course?.RemoveStudent(GetStudent()) ?? false;
     }
 
     public void List_All_Courses(){
@@ -179,6 +174,42 @@ class Canvas
         SelectedCourse.ViewStudents();
     }
 
+    public bool Set_Assignment_Grade_For_Student(Person? student, string? CourseCode, string? AssignmentName, Grade assignmentGrade)
+    {
+        if (student != null && CourseCode != null && AssignmentName != null)
+        {
+            IEnumerable<Course> result = student.StudentsCourse.Where(
+                t =>
+                    t.CourseCode != null && t.CourseCode.ToUpper().Contains(CourseCode.ToUpper())
+            );
+
+            if (result.Any())
+            {
+                Course studentCourse = result.First();
+
+                IEnumerable<Assignment> assignmentsToModify = studentCourse.Assignments.Where(
+                    c =>
+                        c.AssignmentName != null && c.AssignmentName.ToUpper().Contains(AssignmentName.ToUpper())
+                );
+
+                foreach (var assignmentToModify in assignmentsToModify)
+                {
+                    assignmentToModify.AssignementGrade = assignmentGrade;
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+
+    public void View_Student_Grades(Person? StudentName){
+        StudentName.View_Student_Grades();
+    }
+
     private Course SelectCourse(){
         Console.WriteLine("Enter Course Number in the List: ");
 
@@ -238,6 +269,9 @@ class Canvas
 
         return (Name, Desc, availablePoints, userDate);
     }
+
+
+    
 
 
 
