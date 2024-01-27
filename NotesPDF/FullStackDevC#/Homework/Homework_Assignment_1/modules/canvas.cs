@@ -183,6 +183,7 @@ class Canvas
                     t.CourseCode != null && t.CourseCode.ToUpper().Contains(CourseCode.ToUpper())
             );
 
+
             if (result.Any())
             {
                 Course studentCourse = result.First();
