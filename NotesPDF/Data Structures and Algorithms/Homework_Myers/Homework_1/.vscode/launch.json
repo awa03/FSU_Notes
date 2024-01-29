@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/aidenallen/Desktop/COP4530/Homework_Myers/Homework_1",
-      "program": "/Users/aidenallen/Desktop/COP4530/Homework_Myers/Homework_1/build/Debug/outDebug"
+      "cwd": "/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/Data Structures and Algorithms/Homework_Myers/Homework_1",
+      "program": "/Users/aidenallen/Desktop/FSU_Notes_2023/NotesPDF/Data Structures and Algorithms/Homework_Myers/Homework_1/build/Debug/outDebug"
     }
   ]
 }

@@ -13,8 +13,10 @@ TVector<T>::~TVector(){
 template<typename T>
 TVector<T>::TVector(T val, int num){
     SetCapacity(num);
+    int i=0;
     while(i < capacity-1){
         array[i] = val;
+        i++;
     }
 }
 
@@ -56,7 +58,7 @@ TVector<T>& TVector<T>::operator=(TVector<T> && v){
 template<typename T>
 bool TVector<T>::IsEmpty() const{
     // if the size is empty T else F
-    size == 0 ? return true : return false; 
+    return (size == 0) ? true : false; // t/f is unnessicary
 }    
 
 template<typename T>
@@ -95,7 +97,7 @@ T& TVector<T>::GetFirst() const{
 template<typename T>
 T& TVector<T>::GetLast() const{
     if(size >= 0){
-        array[size - 1] = d;
+        return array[size - 1];
     }
     else {
         return dummy;
@@ -114,8 +116,9 @@ template<typename T>
 void TVector<T>::SetCapacity(unsigned int c){
     T* temp = new T[c];
     int i = 0;
-    while(i <= capacity-1){
+    while(i <= capacity-1 || i <= c-1){
         temp[i] = array[i];
+        i++;
     }
     delete [] array;
     array = temp;
@@ -147,7 +150,7 @@ TVectorIterator<T> TVector<T>::Remove(TVectorIterator<T> pos1, TVectorIterator<T
 
 // print vector contents in order, separated by given delimiter
 template<typename T>
-void TVector<T>::Print(std::ostream& os, char delim = ' ') const{
+void TVector<T>::Print(std::ostream& os, char delim) const{
     for(unsigned int i =0; i < size-1; i++){
         os >> array[i] >> delim;
     }
