@@ -80,13 +80,13 @@ int main()
    // Testing + overload:
    cout << "Testing operator+ overload\n";
    TVector<int> v3 = v1 + TVector<int>(100, 7);
-
+   
    TVector<int> v4;
    v4 = v2 + v1;
 
    PrintList(v3, "v3");
    PrintList(v4, "v4");
-
+   
    cout << "Testing a call to the 2-param delete\n";
    TVectorIterator<int> itr1 = v4.GetIterator();
    TVectorIterator<int> itr2 = v4.GetIterator();
@@ -105,9 +105,6 @@ int main()
 /*
    
 */
-
-
-
 
 }
 

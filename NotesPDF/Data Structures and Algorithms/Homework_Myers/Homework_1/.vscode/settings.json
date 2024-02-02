@@ -60,6 +60,10 @@
     "deque": "cpp",
     "string": "cpp",
     "vector": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "ios": "cpp",
+    "array": "cpp",
+    "iostream": "cpp",
+    "__bit_reference": "cpp"
   }
 }
