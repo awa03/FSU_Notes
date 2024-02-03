@@ -48,9 +48,11 @@ int main()
    itr.Next();
    itr.Next();				// advance two spots
    itr = v1.Insert(itr, 888);
+   cout  << "\nData: " << itr.GetData() << endl;
    itr.Next();				
    itr.Next();				
    itr.Next();				// advance three spots
+   cout  << "\nData2: " << itr.GetData() << endl;
    itr = v1.Insert(itr, 777);
 
    PrintList(v1, "v1");
@@ -59,6 +61,7 @@ int main()
 
    itr.Next();   
    itr.Next();   			// advance two spots
+   cout << "\n\n\n\bRemoving "  << itr.GetData() << endl;
    itr = v1.Remove(itr);		// delete current item
    PrintList(v1, "v1");
 

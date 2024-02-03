@@ -181,25 +181,25 @@ TVectorIterator<T> TVector<T>::Insert(TVectorIterator<T> pos, const T& d){
         SetCapacity(capacity + SPARECAPACITY);
     }
 
-    T* temp = new T[capacity + 10];
+    T* temp = new T[capacity];
     int i = 0; 
     int j = 0;
 
-    if(pos.index != 0){ 
-        // Copy elements before the insertion point
-        for (; i <= pos.index; i++, j++) {
+    int index;
+    // Copy elements before the insertion point
+    if(pos.index != 0){
+        for (; i < pos.index; i++, j++) {
             temp[j] = array[i];
         }
+        index = j;
         temp[j++] = d;
     }
     else {
-        temp[j] = d;
+        temp[j] = d; // if the index is 0
+        index = j;
+        j++;
     }
-    // Insert the new element at the specified position
     
-    pos.ptr = array + j;
-    pos.index = j;
-
     // Copy the remaining elements after the insertion point
     for (; i < size; i++, j++) {
         temp[j] = array[i];
@@ -208,9 +208,15 @@ TVectorIterator<T> TVector<T>::Insert(TVectorIterator<T> pos, const T& d){
     delete[] array;
     array = temp;
     size++;
-    capacity = capacity;
 
-    return pos.Previous();
+    std::cout << "Pos Data:" << std::endl;
+    std::cout << *(pos.ptr) << std::endl << pos.index << std::endl;
+
+    TVectorIterator<T> itr;
+    itr.vsize = size;
+    itr.index = index;
+    itr.ptr = array + index;
+    return itr;
 }
 
 // remove data item at position pos. Return iterator to the item 
@@ -290,7 +296,7 @@ bool TVectorIterator<T>::HasNext() const{
 }	
 template<typename T>
 bool TVectorIterator<T>::HasPrevious() const{
-    return (index <= 1)? false : true;
+    return (index == 0)? false : true;
 }	
 
 template<typename T>
@@ -300,6 +306,7 @@ TVectorIterator<T> TVectorIterator<T>::Next(){
 }
 template<typename T>
 TVectorIterator<T> TVectorIterator<T>::Previous(){
+    std::cout << "\n ITR Data: " << index << " " << *(ptr) << std::endl;
     HasPrevious() ? (index--, ptr--) : 0;
     return *this;
 }
