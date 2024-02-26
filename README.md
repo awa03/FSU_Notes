@@ -8,6 +8,9 @@ This repository is a compilation of my notes from Florida State University. With
 > The majority of this information is from learning in class, therefore non of this information is strictly my own. For Credits all of the course teachers names will be cited. 
 
 
+> [!NOTE]
+> This repository is now depricated. New Notes will be posted to [Repo Link](). Thank you for your understanding. For now this repository stands to encompass notes from Spring 2023 - Mid Spring 2024. This change has been made to course issues in seperating material. Rather than modify existing information I will be creating a more wiki like setup for notes. 
+
 # Work Cited
 Teacher | Course Name | Link
 -|-|-
